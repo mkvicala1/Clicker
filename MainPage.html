@@ -1,0 +1,107 @@
+<!DOCTYPE html><html>
+  <head>
+    <title>Example From Ya Boi</title>
+    <script src="Base.js"></script>
+  </head>
+
+  <body>
+    <p>The following is a game that clicks.</p>
+
+    <button type="button" onclick="addResources('Grain')">Grain</button>
+    <button type="button" onclick="addResources('Wood')">Wood</button>
+    <button type="button" onclick="addResources('Stone')">Stone</button>
+    <button type="button" onclick="addPeasants()">Get Some Peasants</button>
+    <p>
+      <style>
+        tr { display: block; float: left; }
+        th, td { display: block; border: 1px solid black; }
+      </style>
+  
+      <table>
+        <tr>
+          <th>Total Peasants</th>
+          <th>Grain</th>
+          <th>Wood</th>
+          <th>Leather</th>
+          <th>Wood</th>
+          <th>Stone</th>
+          <th>Ore</th>
+          <th>Metals</th>
+        </tr>
+        <tr>
+          <td id = "peasantNum">0</td>
+          <td id = "GrainLine">0</td>
+          <td id = "WoodLine">0</td>
+          <td id = "LeatherLine">0</td>
+          <td id = "WoodLine">0</td>
+          <td id = "StoneLine">0</td>
+          <td id = 'OreLine'>0</td>
+          <td id = "MetalLine">0</td>
+        </tr>
+      </table>
+    </p>
+
+
+    <style>
+      table,
+      td,
+      th {
+          border: 1px solid;
+          padding: 2px;
+          text-align: center;
+      }
+    </style>
+
+  
+    <p>
+      <button type = "button" onclick = "openChart('Population')">Population</button>
+      <button type = "button" onclick = "openChart('Buildings')">Buildings</button>
+    </p>
+
+  <div id="Population" style="display:none">
+    <table>
+      <tr>
+        <th>Available Peasants</th>
+        <th>Farmers</th>
+        <th>Lumberjacks</th>
+        <th>Stonemasons</th>
+      </tr>
+      <tr>
+        <td id = "availableNum">0</td>
+        <td id = "farmerNum">0</td>
+        <td id = "lumberjackNum">0</td>
+        <td id = "stonemasonNum">0</td>
+      </tr>
+      </table>
+      <button type="button" onclick="assignPeasants('Farmer')">Hire Farmer</button>
+    <button type="button" onclick="assignPeasants('Lumberjack')">Hire Lumberjack</button>
+    <button type="button" onclick="assignPeasants('Stonemason')">Hire Stonemason</button>
+  </div>
+
+  <div id="Buildings" style="display:none">
+    <table>
+      <tr>
+          <th>Houses</th>
+          <th>Granaries</th>
+          <th>Lumber Mills</th>
+          <th>Mines</th>
+          <th>Temples</th>
+      </tr>
+      
+      <tr>
+        <td id = 'housingNum'>0</td>
+        <td id = 'granaryNum'>0</td>
+        <td id = 'lumbermillNum'>0</td>
+        <td id = 'mineNum'>0</td>
+        <td id = 'templeNum'>0</td>
+      </tr>
+      </table>
+      <button type="button" onclick="buildBuildings(1)">Build House</button>
+      <button type="button" onclick="buildBuildings(1)">Build Granary</button>
+      <button type="button" onclick="buildBuildings(1)">Build Lumber Mill</button>
+      <button type="button" onclick="buildBuildings(1)">Build Mine</button>
+      <button type="button" onclick="buildBuildings(1)">Build Temple</button>
+  </div>
+  </body>
+  
+</html>
