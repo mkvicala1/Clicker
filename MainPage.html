@@ -1,12 +1,18 @@
 <!DOCTYPE html><html>
   <head>
-    <title>Example From Ya Boi</title>
+    <title>Pixelopolis</title>
     <script src="Base.js"></script>
   </head>
 
   <body>
     <p>The following is a game that clicks.</p>
-
+    <table>
+      <tr>Test Table</tr>
+      <tr>
+        <th id="testvalue1">value</th>
+        <th id="testvalue2">value</th>
+      </tr>
+    </table>
     <button type="button" onclick="addResources('Grain')">Grain</button>
     <button type="button" onclick="addResources('Wood')">Wood</button>
     <button type="button" onclick="addResources('Stone')">Stone</button>
@@ -17,26 +23,36 @@
         th, td { display: block; border: 1px solid black; }
       </style>
   
-      <table>
+      <table id ="resourceTable">
         <tr>
+          <th>Resources</th>
           <th>Total Peasants</th>
           <th>Grain</th>
           <th>Wood</th>
-          <th>Leather</th>
-          <th>Wood</th>
           <th>Stone</th>
+          <th>Leather</th>
           <th>Ore</th>
           <th>Metals</th>
         </tr>
         <tr>
+          <th>Total</th>
           <td id = "peasantNum">0</td>
           <td id = "GrainLine">0</td>
           <td id = "WoodLine">0</td>
-          <td id = "LeatherLine">0</td>
-          <td id = "WoodLine">0</td>
           <td id = "StoneLine">0</td>
+          <td id = "LeatherLine">0</td>
           <td id = 'OreLine'>0</td>
           <td id = "MetalLine">0</td>
+        </tr>
+        <tr>
+          <th>Income</th>
+          <td id = 'peasantChange'>+0</td>
+          <td id = 'grainChange'>+0</td>
+          <td id = 'woodChange'>+0</td>
+          <td id = 'stoneChange'>+0</td>
+          <td id = 'leatherChange'>+0</td>
+          <td id = 'oreChange'>+0</td>
+          <td id = 'metalChange'>+0</td>
         </tr>
       </table>
     </p>
@@ -52,10 +68,30 @@
       }
     </style>
 
+<div id="Storage">
+  <table>
+    <tr>
+        <th>Storage</th>
+        <th>Grain</th>
+        <th>Wood</th>
+        <th>Stone</th>
+        <th>Housing</th>
+    </tr>
+    
+    <tr>
+      <th>Capacity</th>
+      <td id = 'grainCapacity'>0</td>
+      <td id = 'woodCapacity'>0</td>
+      <td id = 'stoneCapacity'>0</td>
+      <td id = 'housingCapacity'>0</td>
+    </tr>
+    </table>
+</div>
   
     <p>
       <button type = "button" onclick = "openChart('Population')">Population</button>
       <button type = "button" onclick = "openChart('Buildings')">Buildings</button>
+      <button type = "button" onclick = "openChart('Upgrades')">Upgrades</button>
     </p>
 
   <div id="Population" style="display:none">
@@ -91,17 +127,37 @@
       <tr>
         <td id = 'housingNum'>0</td>
         <td id = 'granaryNum'>0</td>
-        <td id = 'lumbermillNum'>0</td>
+        <td id = 'lumberMillNum'>0</td>
         <td id = 'mineNum'>0</td>
         <td id = 'templeNum'>0</td>
       </tr>
       </table>
-      <button type="button" onclick="buildBuildings(1)">Build House</button>
-      <button type="button" onclick="buildBuildings(1)">Build Granary</button>
-      <button type="button" onclick="buildBuildings(1)">Build Lumber Mill</button>
-      <button type="button" onclick="buildBuildings(1)">Build Mine</button>
-      <button type="button" onclick="buildBuildings(1)">Build Temple</button>
+      <button type="button" onclick="buildBuildings('house')">Build House</button>
+      <button type="button" onclick="buildBuildings('granary')">Build Granary</button>
+      <button type="button" onclick="buildBuildings('lumberMill')">Build Lumber Mill</button>
+      <button type="button" onclick="buildBuildings('mine')">Build Mine</button>
+      <button type="button" onclick="buildBuildings('temple')">Build Temple</button>
   </div>
+
+  <div id="Upgrades" style="display:none">
+    <table>
+      <tr>
+          <th>Districts</th>
+          <th>Marketplace</th>
+          <th>Port</th>
+      </tr>
+      
+      <tr>
+        <th>District Level</th>
+        <td id = 'marketplaceLevel'>0</td>
+        <td id = 'portLevel'>0</td>
+      </tr>
+      </table>
+      <button type="button" onclick="buildBuildings('marketplace')">Upgrade Marketplace</button>
+      <button type="button" onclick="buildBuildings('port')">Upgrade Ports</button>
+  </div>
+
+  <img src="Outline.png" alt="City Outliner" width="600" height="300">
   </body>
   
 </html>
